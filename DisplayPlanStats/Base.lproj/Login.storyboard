@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="DisplayPlanStats" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_black" translatesAutoresizingMaskIntoConstraints="NO" id="sJh-I1-abz">
+                                <rect key="frame" x="16" y="20" width="288" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="4OY-l1-PBz"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-BV-h9N">
+                                <rect key="frame" x="16" y="251.5" width="288" height="65"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dv6-mt-RaH">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-oy-pgu">
+                                        <rect key="frame" x="0.0" y="35" width="288" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ah-cs-jUM" customClass="Button" customModule="DisplayPlanStats" customModuleProvider="target">
+                                <rect key="frame" x="16" y="324" width="288" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZOU-4y-GUy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hPt-BV-h9N" secondAttribute="trailing" id="5cX-mG-o48"/>
+                            <constraint firstItem="hPt-BV-h9N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BRX-86-wWs"/>
+                            <constraint firstItem="7ah-cs-jUM" firstAttribute="top" secondItem="hPt-BV-h9N" secondAttribute="bottom" constant="7.5" id="FyQ-C2-D4D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sJh-I1-abz" secondAttribute="trailing" id="NSb-vl-gZH"/>
+                            <constraint firstItem="7ah-cs-jUM" firstAttribute="leading" secondItem="hPt-BV-h9N" secondAttribute="leading" id="QeK-UC-cDm"/>
+                            <constraint firstItem="7ah-cs-jUM" firstAttribute="trailing" secondItem="hPt-BV-h9N" secondAttribute="trailing" id="bUl-ci-4aD"/>
+                            <constraint firstItem="sJh-I1-abz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="g25-ce-Et3"/>
+                            <constraint firstItem="sJh-I1-abz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="geb-xt-Brf"/>
+                            <constraint firstItem="hPt-BV-h9N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kG8-ay-Uj9"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="y2U-dF-YkV" appends="YES" id="iXv-OR-8Ot"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="7ah-cs-jUM" id="lus-72-ZWp"/>
+                        <outlet property="nameTextField" destination="dv6-mt-RaH" id="etz-jY-kae"/>
+                        <outlet property="passwordTextField" destination="Uf2-oy-pgu" id="l22-a0-Idg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="y2U-dF-YkV" userLabel="Close keyboard">
+                    <connections>
+                        <action selector="closeKeyboard:" destination="BYZ-38-t0r" id="DFw-li-9Wa"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo_black" width="1781" height="600"/>
+    </resources>
+</document>

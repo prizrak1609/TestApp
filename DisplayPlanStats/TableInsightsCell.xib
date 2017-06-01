@@ -1,20 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableInsightsCell" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="TableInsightsCell" customModule="DisplayPlanStats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usM-mR-r5Z">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSE-Tp-Msw">
+                    <rect key="frame" x="0.0" y="26" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvz-LE-fmu">
+                    <rect key="frame" x="50" y="26" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we2-Jm-ohF">
+                    <rect key="frame" x="0.0" y="52" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3i-10-idR">
+                    <rect key="frame" x="50" y="52" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F1q-W6-61w">
+                    <rect key="frame" x="0.0" y="83" width="320" height="485"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fvz-LE-fmu" firstAttribute="leading" secondItem="dSE-Tp-Msw" secondAttribute="trailing" constant="8" id="1tt-mL-0c5"/>
+                <constraint firstItem="F3i-10-idR" firstAttribute="leading" secondItem="we2-Jm-ohF" secondAttribute="trailing" constant="8" id="4sa-Na-aCF"/>
+                <constraint firstItem="fvz-LE-fmu" firstAttribute="centerY" secondItem="dSE-Tp-Msw" secondAttribute="centerY" id="D6G-l0-PSe"/>
+                <constraint firstAttribute="trailing" secondItem="usM-mR-r5Z" secondAttribute="trailing" id="EOH-ZX-xFa"/>
+                <constraint firstItem="F1q-W6-61w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HhW-Wc-8gE"/>
+                <constraint firstItem="F1q-W6-61w" firstAttribute="top" secondItem="we2-Jm-ohF" secondAttribute="bottom" constant="10" id="PGW-6B-072"/>
+                <constraint firstItem="usM-mR-r5Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QOO-Sp-bUu"/>
+                <constraint firstItem="we2-Jm-ohF" firstAttribute="leading" secondItem="dSE-Tp-Msw" secondAttribute="leading" id="UzD-xC-ecQ"/>
+                <constraint firstItem="dSE-Tp-Msw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fOJ-uV-VF7"/>
+                <constraint firstItem="dSE-Tp-Msw" firstAttribute="top" secondItem="usM-mR-r5Z" secondAttribute="bottom" constant="5" id="gqO-PQ-TT6"/>
+                <constraint firstAttribute="trailing" secondItem="F1q-W6-61w" secondAttribute="trailing" id="n6L-d0-4uj"/>
+                <constraint firstItem="F3i-10-idR" firstAttribute="centerY" secondItem="we2-Jm-ohF" secondAttribute="centerY" id="pN2-zP-azV"/>
+                <constraint firstItem="usM-mR-r5Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rw5-tc-ScX"/>
+                <constraint firstItem="we2-Jm-ohF" firstAttribute="top" secondItem="dSE-Tp-Msw" secondAttribute="bottom" constant="5" id="vsA-hg-Wqz"/>
+                <constraint firstAttribute="bottom" secondItem="F1q-W6-61w" secondAttribute="bottom" id="xSk-iS-Fyw"/>
+            </constraints>
+            <connections>
+                <outlet property="averageDwellTimeLabel" destination="dSE-Tp-Msw" id="nnf-IM-XtS"/>
+                <outlet property="averageDwellTimeValueLabel" destination="fvz-LE-fmu" id="62A-YL-Bm1"/>
+                <outlet property="nameLabel" destination="usM-mR-r5Z" id="imR-1M-36C"/>
+                <outlet property="tableView" destination="F1q-W6-61w" id="VLS-Oy-wbV"/>
+                <outlet property="topLocationLabel" destination="we2-Jm-ohF" id="GW5-21-Iw5"/>
+                <outlet property="topLocationValueLabel" destination="F3i-10-idR" id="32E-cA-6Xr"/>
+            </connections>
         </view>
     </objects>
 </document>

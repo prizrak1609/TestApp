@@ -31,6 +31,7 @@ struct ServerMainVCModel {
     let end: Date
 
     init?(json: JSON) {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         guard let status = ServerCampainStatus(rawValue: json["status"].intValue),
             let type = ServerCampainType(rawValue: json["type_id"].intValue),
             let start = dateFormatter.date(from: json["start"].stringValue),

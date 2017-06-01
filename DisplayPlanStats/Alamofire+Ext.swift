@@ -13,7 +13,7 @@ import PromiseKit
 extension Alamofire.DataRequest {
 
     /// Adds a handler to be called once the request has finished.
-    public func responseJSON(queue: DispatchQueue?, options: JSONSerialization.ReadingOptions = .allowFragments) -> Promise<Any> {
+    public func responseJSON(queue: DispatchQueue, options: JSONSerialization.ReadingOptions = .allowFragments) -> Promise<Any> {
         return Promise { fulfill, reject in
             responseJSON(queue: queue, options: options, completionHandler: { response in
                 switch response.result {

@@ -10,7 +10,7 @@ import Foundation
 
 struct ServerBase {
 
-    static private(set) var baseAddress = "http://dev.displayplan.digital"
+    static private(set) var baseAddress = "http://oralb.displayplan.digital"
 
     static func setBaseAddress(_ address: String) {
         baseAddress = address.trimmed

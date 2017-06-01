@@ -13,10 +13,10 @@ import SwiftyJSON
 
 final class ServerChart {
 
-    func getStatistic(id: String) {
-        guard let url = URL(string: "\(ServerBase.baseAddress)/api/statistics/campaign/\(id)") else { return }
-        Alamofire.request(url, method: .get).responseString().then { result -> Void in
-            print(result)
-        }.catch { print($0.localizedDescription) }
+    func getStatistic<T: ServerChartProtocol>(id: String) -> Promise<T?> {
+        guard let url = URL(string: "\(ServerBase.baseAddress)/api/statistics/campaign/\(id)") else {
+            return Promise(error: NSError(domain: "can't convert \(ServerBase.baseAddress)/api/statistics/campaign/\(id) to URL", code: 0, userInfo: nil))
+        }
+        return Alamofire.request(url, method: .get).responseJSON(queue: .global(qos: .userInitiated)).then { return T(json: JSON($0)) }
     }
 }

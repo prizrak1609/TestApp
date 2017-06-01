@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,16 +9,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircularDiagramCell" customModule="DisplayPlanStats" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CircularDiagramCell" customModule="DisplayPlanStats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-ZZ-XuP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcm-pH-2ei" customClass="PieChartView" customModule="Charts">
+                    <rect key="frame" x="0.0" y="21" width="375" height="309"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lcm-pH-2ei" firstAttribute="trailing" secondItem="cmC-ZZ-XuP" secondAttribute="trailing" id="DKw-I7-4v9"/>
+                <constraint firstAttribute="trailing" secondItem="cmC-ZZ-XuP" secondAttribute="trailing" id="DyY-UH-lyh"/>
+                <constraint firstItem="lcm-pH-2ei" firstAttribute="top" secondItem="cmC-ZZ-XuP" secondAttribute="bottom" id="KLr-j6-q5o"/>
+                <constraint firstItem="lcm-pH-2ei" firstAttribute="leading" secondItem="cmC-ZZ-XuP" secondAttribute="leading" id="fbN-yt-sAu"/>
+                <constraint firstAttribute="bottom" secondItem="lcm-pH-2ei" secondAttribute="bottom" id="lQW-uV-iyd"/>
+                <constraint firstItem="cmC-ZZ-XuP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n0d-Q7-Mqc"/>
+                <constraint firstItem="cmC-ZZ-XuP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r5l-eL-Pdr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="nameLabel" destination="cmC-ZZ-XuP" id="lGh-Bj-oEp"/>
+                <outlet property="pieChartView" destination="lcm-pH-2ei" id="daN-VT-hnd"/>
+            </connections>
+            <point key="canvasLocation" x="26.5" y="-117"/>
         </view>
     </objects>
 </document>

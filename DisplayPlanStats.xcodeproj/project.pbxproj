@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		358AFB33A0A0EDD49F11BE62 /* Pods_DisplayPlanStatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C3478E80BCFFC207D5AC03 /* Pods_DisplayPlanStatsUITests.framework */; };
 		45763B15D57301036CB2EE73 /* Pods_DisplayPlanStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3211AC474DBAC0AC013BF /* Pods_DisplayPlanStats.framework */; };
+		78212F041EDD7D7E009F423C /* BarChartXValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78212F031EDD7D7E009F423C /* BarChartXValueFormatter.swift */; };
+		78212F081EDD7E4A009F423C /* BarChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78212F071EDD7E4A009F423C /* BarChartDataEntry.swift */; };
+		78212F0A1EDD8383009F423C /* TableInsightsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78212F091EDD8383009F423C /* TableInsightsCellModel.swift */; };
+		78212F0C1EDD8796009F423C /* TableInsightsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78212F0B1EDD8796009F423C /* TableInsightsCellViewModel.swift */; };
+		78212F121EDD9285009F423C /* TableInsightsCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78212F101EDD9285009F423C /* TableInsightsCellCell.swift */; };
+		78212F131EDD9285009F423C /* TableInsightsCellCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78212F111EDD9285009F423C /* TableInsightsCellCell.xib */; };
 		7827CB7D1ED478AA007755F1 /* UIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7827CB7C1ED478AA007755F1 /* UIC.swift */; };
 		783C4BD01ED46F0A0078F546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C4BCF1ED46F0A0078F546 /* AppDelegate.swift */; };
 		783C4BD21ED46F0A0078F546 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C4BD11ED46F0A0078F546 /* LoginVC.swift */; };
@@ -36,6 +42,13 @@
 		784881B21ED6D06F0059F855 /* ServerChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784881B11ED6D06F0059F855 /* ServerChart.swift */; };
 		784881B41ED6D5040059F855 /* ServerChartTouchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784881B31ED6D5040059F855 /* ServerChartTouchModel.swift */; };
 		784881B61ED6EAA30059F855 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784881B51ED6EAA30059F855 /* Variables.swift */; };
+		784E6FD11ED7FE6600D6C3AB /* ServerChartProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E6FD01ED7FE6600D6C3AB /* ServerChartProtocol.swift */; };
+		784E6FD51ED80AA000D6C3AB /* ChartsVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E6FD41ED80AA000D6C3AB /* ChartsVCViewModel.swift */; };
+		784E6FD71ED82FF600D6C3AB /* LineChartdataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E6FD61ED82FF500D6C3AB /* LineChartdataEntry.swift */; };
+		784E6FDA1ED83B4900D6C3AB /* ChartMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E6FD91ED83B4900D6C3AB /* ChartMarkerView.swift */; };
+		784E6FDC1ED83B9600D6C3AB /* ChartMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784E6FDB1ED83B9600D6C3AB /* ChartMarkerView.xib */; };
+		784E763D1EDC5C6200F0636C /* CircularDiagramValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E763C1EDC5C6200F0636C /* CircularDiagramValueFormatter.swift */; };
+		784E763F1EDC617F00F0636C /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E763E1EDC617F00F0636C /* Double+Ext.swift */; };
 		785668B11ED56F3700809B44 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785668B01ED56F3700809B44 /* String+Ext.swift */; };
 		78EB3AAD1ED591FA00B83C8E /* ShowText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB3AAC1ED591FA00B83C8E /* ShowText.swift */; };
 		78EB3AAF1ED59ACA00B83C8E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB3AAE1ED59ACA00B83C8E /* MainVC.swift */; };
@@ -77,6 +90,12 @@
 		37A3211AC474DBAC0AC013BF /* Pods_DisplayPlanStats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DisplayPlanStats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54669AFC0ED21EE2D6DD8D98 /* Pods-DisplayPlanStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisplayPlanStatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DisplayPlanStatsTests/Pods-DisplayPlanStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580FCD52FB2C8CDAE1938233 /* Pods-DisplayPlanStatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisplayPlanStatsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DisplayPlanStatsUITests/Pods-DisplayPlanStatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		78212F031EDD7D7E009F423C /* BarChartXValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartXValueFormatter.swift; sourceTree = "<group>"; };
+		78212F071EDD7E4A009F423C /* BarChartDataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartDataEntry.swift; sourceTree = "<group>"; };
+		78212F091EDD8383009F423C /* TableInsightsCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInsightsCellModel.swift; sourceTree = "<group>"; };
+		78212F0B1EDD8796009F423C /* TableInsightsCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInsightsCellViewModel.swift; sourceTree = "<group>"; };
+		78212F101EDD9285009F423C /* TableInsightsCellCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInsightsCellCell.swift; sourceTree = "<group>"; };
+		78212F111EDD9285009F423C /* TableInsightsCellCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableInsightsCellCell.xib; sourceTree = "<group>"; };
 		7827CB7C1ED478AA007755F1 /* UIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIC.swift; sourceTree = "<group>"; };
 		783C4BCC1ED46F0A0078F546 /* DisplayPlanStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisplayPlanStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783C4BCF1ED46F0A0078F546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +129,13 @@
 		784881B11ED6D06F0059F855 /* ServerChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerChart.swift; sourceTree = "<group>"; };
 		784881B31ED6D5040059F855 /* ServerChartTouchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerChartTouchModel.swift; sourceTree = "<group>"; };
 		784881B51ED6EAA30059F855 /* Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		784E6FD01ED7FE6600D6C3AB /* ServerChartProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerChartProtocol.swift; sourceTree = "<group>"; };
+		784E6FD41ED80AA000D6C3AB /* ChartsVCViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsVCViewModel.swift; sourceTree = "<group>"; };
+		784E6FD61ED82FF500D6C3AB /* LineChartdataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartdataEntry.swift; sourceTree = "<group>"; };
+		784E6FD91ED83B4900D6C3AB /* ChartMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartMarkerView.swift; sourceTree = "<group>"; };
+		784E6FDB1ED83B9600D6C3AB /* ChartMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartMarkerView.xib; sourceTree = "<group>"; };
+		784E763C1EDC5C6200F0636C /* CircularDiagramValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularDiagramValueFormatter.swift; sourceTree = "<group>"; };
+		784E763E1EDC617F00F0636C /* Double+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		785668B01ED56F3700809B44 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		78EB3AAC1ED591FA00B83C8E /* ShowText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowText.swift; sourceTree = "<group>"; };
 		78EB3AAE1ED59ACA00B83C8E /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -174,6 +200,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		78212F0D1EDD9247009F423C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				78212F111EDD9285009F423C /* TableInsightsCellCell.xib */,
+				78212F101EDD9285009F423C /* TableInsightsCellCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		7827CB761ED47685007755F1 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +219,7 @@
 				78EB3AC51ED5BB4800B83C8E /* UITableView+Ext.swift */,
 				7848818A1ED6AAC00059F855 /* Button.swift */,
 				7848818C1ED6B97F0059F855 /* UIImage+Ext.swift */,
+				784E763E1EDC617F00F0636C /* Double+Ext.swift */,
 				783C4BCF1ED46F0A0078F546 /* AppDelegate.swift */,
 				783C4BD61ED46F0A0078F546 /* Assets.xcassets */,
 				783C4BD81ED46F0A0078F546 /* LaunchScreen.storyboard */,
@@ -217,6 +253,7 @@
 			children = (
 				784881961ED6C2E00059F855 /* Charts.storyboard */,
 				784881941ED6C2D70059F855 /* ChartsVC.swift */,
+				784E6FD41ED80AA000D6C3AB /* ChartsVCViewModel.swift */,
 				784881981ED6C4860059F855 /* Cell */,
 			);
 			name = ChartsScreen;
@@ -299,7 +336,7 @@
 		784881981ED6C4860059F855 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				784881AD1ED6CC280059F855 /* ChartCellProtocol.swift */,
+				784E6FD31ED7FF9900D6C3AB /* Protocol */,
 				7848819D1ED6C5830059F855 /* LineChart */,
 				784881A21ED6C5A50059F855 /* Circular */,
 				784881A71ED6C5BF0059F855 /* BarChart */,
@@ -311,9 +348,11 @@
 		7848819D1ED6C5830059F855 /* LineChart */ = {
 			isa = PBXGroup;
 			children = (
+				784E6FD81ED83B3A00D6C3AB /* Marker */,
 				7848819A1ED6C57E0059F855 /* LineChartCell.xib */,
 				784881991ED6C57E0059F855 /* LineChartCell.swift */,
 				784881AF1ED6CF420059F855 /* LineChartXValueFormatter.swift */,
+				784E6FD61ED82FF500D6C3AB /* LineChartdataEntry.swift */,
 			);
 			name = LineChart;
 			sourceTree = "<group>";
@@ -323,6 +362,7 @@
 			children = (
 				7848819F1ED6C5A10059F855 /* CircularDiagramCell.xib */,
 				7848819E1ED6C5A10059F855 /* CircularDiagramCell.swift */,
+				784E763C1EDC5C6200F0636C /* CircularDiagramValueFormatter.swift */,
 			);
 			name = Circular;
 			sourceTree = "<group>";
@@ -332,6 +372,8 @@
 			children = (
 				784881A41ED6C5BA0059F855 /* BarChartCell.xib */,
 				784881A31ED6C5BA0059F855 /* BarChartCell.swift */,
+				78212F031EDD7D7E009F423C /* BarChartXValueFormatter.swift */,
+				78212F071EDD7E4A009F423C /* BarChartDataEntry.swift */,
 			);
 			name = BarChart;
 			sourceTree = "<group>";
@@ -341,8 +383,36 @@
 			children = (
 				784881A91ED6C5DE0059F855 /* TableInsightsCell.xib */,
 				784881A81ED6C5DE0059F855 /* TableInsightsCell.swift */,
+				78212F091EDD8383009F423C /* TableInsightsCellModel.swift */,
+				78212F0B1EDD8796009F423C /* TableInsightsCellViewModel.swift */,
+				78212F0D1EDD9247009F423C /* Cell */,
 			);
 			name = TableInsights;
+			sourceTree = "<group>";
+		};
+		784E6FD21ED7FE6900D6C3AB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				784E6FD01ED7FE6600D6C3AB /* ServerChartProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		784E6FD31ED7FF9900D6C3AB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				784881AD1ED6CC280059F855 /* ChartCellProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		784E6FD81ED83B3A00D6C3AB /* Marker */ = {
+			isa = PBXGroup;
+			children = (
+				784E6FDB1ED83B9600D6C3AB /* ChartMarkerView.xib */,
+				784E6FD91ED83B4900D6C3AB /* ChartMarkerView.swift */,
+			);
+			name = Marker;
 			sourceTree = "<group>";
 		};
 		78EB3AB81ED5A61A00B83C8E /* Cell */ = {
@@ -368,6 +438,7 @@
 		78EBC2831ED563FD0011343C /* Server Models */ = {
 			isa = PBXGroup;
 			children = (
+				784E6FD21ED7FE6900D6C3AB /* Protocol */,
 				78EBC2841ED564140011343C /* ServerLoginModel.swift */,
 				78EB3ABF1ED5AB3100B83C8E /* ServerMainVCModel.swift */,
 				784881B31ED6D5040059F855 /* ServerChartTouchModel.swift */,
@@ -515,7 +586,9 @@
 				7848819C1ED6C57E0059F855 /* LineChartCell.xib in Resources */,
 				784881911ED6BCCF0059F855 /* Settings.storyboard in Resources */,
 				783C4BD51ED46F0A0078F546 /* Login.storyboard in Resources */,
+				78212F131EDD9285009F423C /* TableInsightsCellCell.xib in Resources */,
 				78EB3AB11ED59ADF00B83C8E /* Main.storyboard in Resources */,
+				784E6FDC1ED83B9600D6C3AB /* ChartMarkerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,26 +771,37 @@
 				784881B01ED6CF420059F855 /* LineChartXValueFormatter.swift in Sources */,
 				783C4BD21ED46F0A0078F546 /* LoginVC.swift in Sources */,
 				78EB3AB71ED5A30500B83C8E /* MainVCViewModel.swift in Sources */,
+				784E6FD71ED82FF600D6C3AB /* LineChartdataEntry.swift in Sources */,
 				78EBC2801ED5635B0011343C /* ServerBase.swift in Sources */,
+				78212F0A1EDD8383009F423C /* TableInsightsCellModel.swift in Sources */,
 				7848818B1ED6AAC00059F855 /* Button.swift in Sources */,
 				784881B61ED6EAA30059F855 /* Variables.swift in Sources */,
 				78EB3AB51ED59F8B00B83C8E /* UserDefaults.swift in Sources */,
 				784881951ED6C2D70059F855 /* ChartsVC.swift in Sources */,
 				784881AA1ED6C5DE0059F855 /* TableInsightsCell.swift in Sources */,
+				78212F041EDD7D7E009F423C /* BarChartXValueFormatter.swift in Sources */,
+				78212F0C1EDD8796009F423C /* TableInsightsCellViewModel.swift in Sources */,
+				78212F081EDD7E4A009F423C /* BarChartDataEntry.swift in Sources */,
 				78EB3AC21ED5AB8100B83C8E /* ServerMainVC.swift in Sources */,
+				784E763D1EDC5C6200F0636C /* CircularDiagramValueFormatter.swift in Sources */,
+				784E6FDA1ED83B4900D6C3AB /* ChartMarkerView.swift in Sources */,
 				7848818D1ED6B97F0059F855 /* UIImage+Ext.swift in Sources */,
 				7848818F1ED6BCC60059F855 /* SettingsVC.swift in Sources */,
 				784881B21ED6D06F0059F855 /* ServerChart.swift in Sources */,
 				78EBC2851ED564140011343C /* ServerLoginModel.swift in Sources */,
 				784881A01ED6C5A10059F855 /* CircularDiagramCell.swift in Sources */,
 				7848819B1ED6C57E0059F855 /* LineChartCell.swift in Sources */,
+				784E6FD11ED7FE6600D6C3AB /* ServerChartProtocol.swift in Sources */,
 				78EB3AC01ED5AB3100B83C8E /* ServerMainVCModel.swift in Sources */,
 				78EB3AAF1ED59ACA00B83C8E /* MainVC.swift in Sources */,
+				784E763F1EDC617F00F0636C /* Double+Ext.swift in Sources */,
 				784881A51ED6C5BA0059F855 /* BarChartCell.swift in Sources */,
 				783C4BD01ED46F0A0078F546 /* AppDelegate.swift in Sources */,
 				78EB3AC41ED5AF7200B83C8E /* Alamofire+Ext.swift in Sources */,
 				78EB3ABD1ED5A65400B83C8E /* MainVCCell.swift in Sources */,
 				78EB3AB31ED59BCA00B83C8E /* Storyboards.swift in Sources */,
+				78212F121EDD9285009F423C /* TableInsightsCellCell.swift in Sources */,
+				784E6FD51ED80AA000D6C3AB /* ChartsVCViewModel.swift in Sources */,
 				78EBC2821ED563C50011343C /* ServerLogin.swift in Sources */,
 				7827CB7D1ED478AA007755F1 /* UIC.swift in Sources */,
 				785668B11ED56F3700809B44 /* String+Ext.swift in Sources */,

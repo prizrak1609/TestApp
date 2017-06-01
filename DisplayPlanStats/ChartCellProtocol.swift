@@ -10,6 +10,15 @@ import Foundation
 import CoreGraphics
 
 protocol ChartCellProtocol {
-    static var height: CGFloat { get }
+    var height: CGFloat { get }
     func initialise()
+}
+
+extension ChartCellProtocol {
+
+    static func loadFromXib(owner: Any?) -> Self? {
+        let xib = Bundle.main.loadNibNamed(String(describing: self), owner: owner, options: nil)?.first as? Self
+        xib?.initialise()
+        return xib
+    }
 }

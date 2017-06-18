@@ -21,8 +21,4 @@ extension String {
     var isBlank: Bool {
         return trimmed(.whitespacesAndNewlines).isEmpty
     }
-
-    var isNotBlank: Bool {
-        return !isBlank
-    }
 }

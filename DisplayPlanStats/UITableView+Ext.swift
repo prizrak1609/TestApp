@@ -13,10 +13,4 @@ extension UITableView {
     func register(nib: String, with bundle: Bundle? = nil) {
         register(UINib(nibName: nib, bundle: bundle), forCellReuseIdentifier: nib)
     }
-
-    func register(nibs: [String], with bundle: Bundle? = nil) {
-        for nib in nibs {
-            register(nib: nib, with: bundle)
-        }
-    }
 }

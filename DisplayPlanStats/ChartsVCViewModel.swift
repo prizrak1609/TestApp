@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PromiseKit
 import Charts
 
 protocol ChartsVCViewModelProtocol : class {
@@ -22,12 +21,52 @@ final class ChartsVCViewModel {
 
     weak var delegate: ChartsVCViewModelProtocol?
 
-    private let server = ServerChart()
+    fileprivate let server = ServerChart()
 
     func getData(id: String, type: ServerCampainType) {
-        if case .liftNLearn = type {
-            server.getStatistic(id: id).then { [weak self] (model: ServerChartLiftNLearnModel?) -> Void in
-                guard let delegate = self?.delegate, let model = model else { return }
+        switch type {
+            case .liftNLearn: getLiftNLearnStatistic(id: id)
+            case .touch: getTouchStatistic(id: id)
+            case .video: getVideoStatistic(id: id)
+        }
+    }
+}
+
+private extension ChartsVCViewModel {
+
+    func getVideoStatistic(id: String) {
+        server.getStatistic(id: id) { [weak self] (result: ServerResult<ServerChartVideoModel?>) -> Void in
+            guard let delegate = self?.delegate else { return }
+            if case .result(let model) = result, model != nil {
+                // disable because in if check model != nil
+                // swiftlint:disable:next force_unwrapping
+                print(model!)
+            } else if case .error(let error) = result {
+                delegate.error(error)
+            }
+        }
+    }
+
+    func getTouchStatistic(id: String) {
+        server.getStatistic(id: id) { [weak self] (result: ServerResult<ServerChartTouchModel?>) -> Void in
+            guard let delegate = self?.delegate else { return }
+            if case .result(let model) = result, model != nil {
+                // disable because in if check model != nil
+                // swiftlint:disable:next force_unwrapping
+                print(model!)
+            } else if case .error(let error) = result {
+                delegate.error(error)
+            }
+        }
+    }
+
+    func getLiftNLearnStatistic(id: String) {
+        server.getStatistic(id: id) { [weak self] (result: ServerResult<ServerChartLiftNLearnModel?>) -> Void in
+            guard let delegate = self?.delegate else { return }
+            if case .result(let model) = result, model != nil {
+                // disable because in if check model != nil
+                // swiftlint:disable:next force_unwrapping
+                let model = model!
                 // MARK: processing line chart data
                 let lineEntries = model.interactions.enumerated().map { index, entry in
                     return LineChartDataEntry(x: Double(index), y: Double(entry.count), date: entry.data)
@@ -44,7 +83,7 @@ final class ChartsVCViewModel {
                     return PieChartDataEntry(value: model.count, label: model.tag)
                 }
                 let pieDataSet = PieChartDataSet(values: pieEntries, label: nil)
-                pieDataSet.colors = chartColors
+                pieDataSet.colors = Charts.colors
                 pieDataSet.drawIconsEnabled = false
                 let pieData = PieChartData(dataSet: pieDataSet)
                 DispatchQueue.main.async {
@@ -55,7 +94,7 @@ final class ChartsVCViewModel {
                     return BarChartEntry(x: Double(index), y: model.count, label: model.tag)
                 }
                 let barDataSet = BarChartDataSet(values: barEntries, label: nil)
-                barDataSet.colors = chartColors
+                barDataSet.colors = Charts.colors
                 let barData = BarChartData(dataSet: barDataSet)
                 DispatchQueue.main.async {
                     delegate.barChartData(barData)
@@ -65,7 +104,9 @@ final class ChartsVCViewModel {
                 DispatchQueue.main.async {
                     delegate.tableInsigts(tableInsightsModel)
                 }
-            }.catch(execute: delegate?.error(_:) ?? { _ in })
+            } else if case .error(let error) = result {
+                delegate.error(error)
+            }
         }
     }
 }

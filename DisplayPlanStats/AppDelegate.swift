@@ -17,16 +17,21 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // MARK: set appearance
+        UINavigationBar.appearance().tintColor = .black
+        UIImageView.appearance().tintColor = .black
+        // MARK: enable auto show network indicator when send request
         NetworkActivityIndicatorManager.shared.isEnabled = true
+        // MARK: enable keyboard manager
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         // set start server address if it exists
-        if let addr = UserDefaults.standard.string(forKey: UserDefaults.serverBaseAddress) {
+        if let addr = UserDefaults.standard.string(forKey: UserDefaults.Server.baseAddress) {
             ServerBase.setBaseAddress(addr)
         }
         // set start controller
         window = UIWindow(frame: UIScreen.main.bounds)
-//        if (UserDefaults.standard.string(forKey: UserDefaults.userIdentifier) ?? "").isBlank {
+//        if (UserDefaults.standard.string(forKey: UserDefaults.User.identifier) ?? "").isBlank {
 //            window?.rootViewController = Storyboards.login
 //        } else {
             window?.rootViewController = Storyboards.main

@@ -7,26 +7,39 @@
 //
 
 import Foundation
-import PromiseKit
 import Alamofire
 import SwiftyJSON
 
-final class ServerMainVC {
+final class ServerMainVC : ServerBaseClass {
 
-    var campains: Promise<[ServerMainVCModel]> {
-        guard let url = URL(string: "\(ServerBase.baseAddress)/api/statistics/data") else {
-            return Promise(error: NSError(domain: "can't create url from \(ServerBase.baseAddress)/api/support/signin", code: 0, userInfo: nil))
+    func campains(_ block: @escaping (ServerResult<[ServerMainVCModel]>) -> Void) {
+        guard let url = URL(string: "\(baseAddress)/api/statistics/data") else {
+            block(.error(NSError(domain: "can't create url from \(baseAddress)/api/support/signin", code: 0, userInfo: nil)))
+            return
         }
-        return Alamofire.request(url, method: .get).responseJSON(queue: .global(qos: .userInitiated)).then { json -> [ServerMainVCModel] in
-            let json = JSON(json)
-            let result: [ServerMainVCModel]
-            if json["success"].boolValue {
-                let data = json["data"].arrayValue
-                result = data.flatMap { ServerMainVCModel(json: $0) }
-            } else {
-                throw NSError(domain: "Somesing wrong", code: 0, userInfo: nil)
+        let request = Alamofire.request(url, method: .get)
+        request.responseJSON(queue: .global(qos: .userInitiated)) { [weak self] response in
+            guard let welf = self else { return }
+            let result = welf.preParse(json: response)
+            if case .result(let json) = result {
+                let json = JSON(json)
+                if json["success"].boolValue {
+                    let data = json["data"].arrayValue
+                    let result = data.flatMap { ServerMainVCModel(json: $0) }
+                    DispatchQueue.main.async {
+                        block(.result(result))
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        block(.error(NSError(domain: "Somesing wrong", code: 0, userInfo: nil)))
+                    }
+                }
+            } else if case .error(let error) = result {
+                DispatchQueue.main.async {
+                    block(.error(error))
+                }
             }
-            return result
         }
+        requests["campains"] = request
     }
 }

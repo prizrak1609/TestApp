@@ -42,7 +42,6 @@ private extension MainVC {
     func initNavigationBar() {
         let image = #imageLiteral(resourceName: "ic_settings").resizedProportionaly(to: CGSize(width: 25, height: 25))
         let barButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(openSettings))
-        barButton.tintColor = .black
         navigationItem.rightBarButtonItem = barButton
     }
 

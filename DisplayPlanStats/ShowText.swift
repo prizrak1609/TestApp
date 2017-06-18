@@ -9,11 +9,11 @@
 import Foundation
 import CRToast
 
-func showText(_ string: String, time: TimeInterval = 2, onTap: @escaping () -> Void = {}) {
+func showText(_ string: String, time: TimeInterval = 2, onTap: (() -> Void)? = nil, completionBlock: (() -> Void)? = nil) {
     let interaction = CRToastInteractionResponder(interactionType: .all, automaticallyDismiss: true) { _ in
-        onTap()
+        onTap?()
     }
-    let options: [String : Any] = [kCRToastTextKey : string,
+    var options: [String : Any] = [kCRToastTextKey : string,
                                    kCRToastTextAlignmentKey : NSNumber(value: NSTextAlignment.center.rawValue),
                                    kCRToastBackgroundColorKey : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
                                    kCRToastTextColorKey : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
@@ -22,9 +22,10 @@ func showText(_ string: String, time: TimeInterval = 2, onTap: @escaping () -> V
                                    kCRToastAnimationInDirectionKey : NSNumber(value: CRToastAnimationDirection.left.rawValue),
                                    kCRToastAnimationOutDirectionKey : NSNumber(value: CRToastAnimationDirection.right.rawValue),
                                    kCRToastNotificationTypeKey : NSNumber(value: CRToastType.navigationBar.rawValue),
-                                   // swiftlint:disable:next force_unwrapping
-                                   kCRToastInteractionRespondersKey : [interaction!],
                                    kCRToastNotificationPresentationTypeKey : NSNumber(value: CRToastPresentationType.cover.rawValue),
                                    kCRToastTimeIntervalKey: NSNumber(value: time)]
-    CRToastManager.showNotification(options: options, completionBlock: nil)
+    if let interaction = interaction {
+        options[kCRToastInteractionRespondersKey] = [interaction]
+    }
+    CRToastManager.showNotification(options: options, completionBlock: completionBlock)
 }

@@ -11,14 +11,18 @@ import Foundation
 extension UserDefaults {
 
     // MARK: user info keys
-    static let userName = "User Name"
-    static let userIdentifier = "User Identifier"
+    struct User {
+        static let name = "User Name"
+        static let identifier = "User Identifier"
+    }
 
     // MARK: server keys
-    static let serverBaseAddress = "Server base address"
+    struct Server {
+        static let baseAddress = "Server base address"
+    }
 
     func save(_ model: ServerLoginModel) {
-        set(model.identifier, forKey: UserDefaults.userIdentifier)
-        set(model.name, forKey: UserDefaults.userName)
+        set(model.identifier, forKey: UserDefaults.User.identifier)
+        set(model.name, forKey: UserDefaults.User.name)
     }
 }

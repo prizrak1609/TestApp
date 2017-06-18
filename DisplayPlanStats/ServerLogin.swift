@@ -7,22 +7,35 @@
 //
 
 import Foundation
-import PromiseKit
 import Alamofire
 import SwiftyJSON
 
-final class ServerLogin {
+final class ServerLogin : ServerBaseClass {
 
-    func login(username: String, password: String) -> Promise<ServerLoginModel> {
-        guard let url = URL(string: "\(ServerBase.baseAddress)/api/support/signin") else {
-            return Promise(error: NSError(domain: "can't create url from \(ServerBase.baseAddress)/api/support/signin", code: 0, userInfo: nil))
+    func login(username: String, password: String, _ block: @escaping (ServerResult<ServerLoginModel>) -> Void) {
+        guard let url = URL(string: "\(baseAddress)/api/support/signin") else {
+            block(.error(NSError(domain: "can't create url from \(baseAddress)/api/support/signin", code: 0, userInfo: nil)))
+            return
         }
         let params = ["username" : username,
                       "password" : password]
-        return Alamofire.request(url, method: .post, parameters: params).responseString()
-                        .then { json -> ServerLoginModel in
-                            print(json)
-                            return ServerLoginModel(json: JSON(json))
-                        }
+        let request = Alamofire.request(url, method: .post, parameters: params)
+        request
+            .responseString { print($0.result.value ?? "") }
+            .responseJSON(queue: .global(qos: .userInitiated)) { [weak self] response in
+                guard let welf = self else { return }
+                let result = welf.preParse(json: response)
+                if case .result(let result) = result {
+                    let model = ServerLoginModel(json: JSON(result))
+                    DispatchQueue.main.async {
+                        block(.result(model))
+                    }
+                } else if case .error(let error) = result {
+                    DispatchQueue.main.async {
+                        block(.error(error))
+                    }
+                }
+            }
+        requests["login"] = request
     }
 }

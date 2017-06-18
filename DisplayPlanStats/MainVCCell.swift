@@ -42,7 +42,6 @@ final class MainVCCell: UITableViewCell {
                 case .video: image = #imageLiteral(resourceName: "video")
             }
             campainImageView.image = image
-            campainImageView.tintColor = .black
         }
     }
 

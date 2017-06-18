@@ -30,26 +30,30 @@ final class LoginVC : UIViewController {
     @IBAction func loginClicked(_ sender: Button) {
         guard let name = nameTextField.text,
             let pass = passwordTextField.text,
-            name.isNotBlank,
-            pass.isNotBlank
+            !name.isBlank,
+            !pass.isBlank
             else {
                 showText("Fill all fields")
                 return
             }
-        server.login(username: name.trimmed, password: pass.trimmed).then { [weak self] model -> Void in
+        server.login(username: name.trimmed, password: pass.trimmed) { [weak self] result -> Void in
             guard let welf = self else { return }
-            if model.success {
-                UserDefaults.standard.save(model)
-                if let main = Storyboards.main {
-                    welf.present(main, animated: true, completion: nil)
+            if case .result(let model) = result {
+                if model.success {
+                    UserDefaults.standard.save(model)
+                    if let main = Storyboards.main {
+                        welf.present(main, animated: true, completion: nil)
+                    } else {
+                        showText("Cant get \(Storyboards.Name.main) storyboard")
+                    }
                 } else {
-                    showText("Cant get \(Storyboards.Name.main) storyboard")
+                    sender.shake()
+                    showText("Somesing wrong")
                 }
-            } else {
-                sender.shake()
-                showText("Somesing wrong")
+            } else if case .error(let error) = result {
+                showText(error.localizedDescription)
             }
-        }.catch { showText($0.localizedDescription) }
+        }
     }
 
     @IBAction func closeKeyboard(_ sender: UITapGestureRecognizer) {

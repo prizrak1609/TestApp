@@ -18,8 +18,8 @@ final class Button: UIButton {
         anim.repeatCount = 4
         anim.autoreverses = true
         anim.duration = 0.05
-        anim.fromValue = layer.position.x - 3
-        anim.toValue = layer.position.x + 3
+        anim.fromValue = startPos - 3
+        anim.toValue = startPos + 3
         anim.isRemovedOnCompletion = true
         CATransaction.setCompletionBlock { [weak self] in
             guard let welf = self else { return }

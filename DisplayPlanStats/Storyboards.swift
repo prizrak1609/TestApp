@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-struct Storyboards {
+enum Storyboards {
 
-    struct Name {
+    enum Name {
         static let main = "Main"
         static let login = "Login"
         static let settings = "Settings"

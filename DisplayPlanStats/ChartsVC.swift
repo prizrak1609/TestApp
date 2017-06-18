@@ -9,16 +9,9 @@
 import UIKit
 import Charts
 
-fileprivate struct Xibs {
-    static let lineChart = "LineChartCell"
-    static let circularDiagram = "CircularDiagramCell"
-    static let barChart = "BarChartCell"
-    static let tableInsights = "TableInsightsCell"
-}
-
 final class ChartsVC: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet fileprivate weak var scrollView: UIScrollView!
 
     var campainID = ""
     var campainType = ServerCampainType.liftNLearn

@@ -25,7 +25,7 @@ final class SettingsVC: UIViewController {
     }
 
     @IBAction func saveButtonClicked(_ sender: UIButton) {
-        guard var text = serverUrlTextField.text, text.isNotBlank else { return }
+        guard var text = serverUrlTextField.text, !text.isBlank else { return }
         if !text.contains("http://"), !text.contains("https://") {
             text = "http://\(text)"
         }

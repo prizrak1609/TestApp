@@ -53,5 +53,5 @@ struct UIC {
     }()
 
     // LaunchScreen.storyboard 
-    static let title = { return [20.0, 20.0, 21.0, 24.0, 30.0][index] }()
+//    static let title = { return [20.0, 20.0, 21.0, 24.0, 30.0][index] }()
 }

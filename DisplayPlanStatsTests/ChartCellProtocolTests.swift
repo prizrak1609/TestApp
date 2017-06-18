@@ -1,15 +1,15 @@
 //
-//  DisplayPlanStatsTests.swift
-//  DisplayPlanStatsTests
+//  ChartCellProtocolTests.swift
+//  DisplayPlanStats
 //
-//  Created by Dima Gubatenko on 23.05.17.
+//  Created by Dima Gubatenko on 12.06.17.
 //  Copyright © 2017 A2Lab. All rights reserved.
 //
 
 import XCTest
 @testable import DisplayPlanStats
 
-class DisplayPlanStatsTests: XCTestCase {
+class ChartCellProtocolTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -22,15 +22,11 @@ class DisplayPlanStatsTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertFalse(false)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testLoadFromXib() {
+        let view = LineChartCell.loadFromXib(owner: nil)
+        XCTAssertNotNil(view)
     }
-    
 }

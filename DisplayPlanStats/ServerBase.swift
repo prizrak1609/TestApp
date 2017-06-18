@@ -14,6 +14,6 @@ struct ServerBase {
 
     static func setBaseAddress(_ address: String) {
         baseAddress = address.trimmed
-        UserDefaults.standard.set(address, forKey: UserDefaults.serverBaseAddress)
+        UserDefaults.standard.set(address, forKey: UserDefaults.Server.baseAddress)
     }
 }

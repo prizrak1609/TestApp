@@ -29,17 +29,14 @@ target 'DisplayPlanStats' do
   pod 'IQKeyboardManager'
 
 # https://github.com/mxcl/PromiseKit
-  swift_version = "3.1"
-  pod "PromiseKit/Alamofire", "~> 4.0"
+#  swift_version = "3.1"
+#  pod "PromiseKit/Alamofire", "~> 4.0"
 
   target 'DisplayPlanStatsTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'DisplayPlanStatsUITests' do
-    inherit! :search_paths
-    # Pods for testing
+# https://github.com/mxcl/PromiseKit
+#    swift_version = "3.1"
+#    pod "PromiseKit/Alamofire", "~> 4.0"
   end
 
 end

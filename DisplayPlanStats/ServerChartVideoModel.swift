@@ -1,5 +1,5 @@
 //
-//  ServerChartTouchModel.swift
+//  ServerChartVideoModel.swift
 //  DisplayPlanStats
 //
 //  Created by Dima Gubatenko on 08.06.17.
@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct ServerChartTouchModel : ServerChartProtocol {
+struct ServerChartVideoModel : ServerChartProtocol {
 
     init?(json: JSON) {
     }

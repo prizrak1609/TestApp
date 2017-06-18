@@ -30,14 +30,16 @@ final class MainVCViewModel : NSObject {
     }
 
     func getData() {
-        server.campains.then { [weak self] models -> Void in
-            guard let welf = self else { return }
-            welf.tableViewData = models
-            welf.showedTableViewData = models
-            DispatchQueue.main.async {
-                welf.delegate?.reloadTableView()
+        server.campains { [weak self] result -> Void in
+            guard let welf = self, let delegate = welf.delegate else { return }
+            if case .result(let models) = result {
+                welf.tableViewData = models
+                welf.showedTableViewData = models
+                delegate.reloadTableView()
+            } else if case .error(let error) = result {
+                delegate.error(error)
             }
-        }.catch(execute: delegate?.error ?? { _ in })
+        }
     }
 }
 
@@ -45,7 +47,7 @@ extension MainVCViewModel : UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchBar.showsCancelButton = true
-        if searchText.isNotBlank {
+        if !searchText.isBlank {
             showedTableViewData = tableViewData.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         } else {
             showedTableViewData = tableViewData

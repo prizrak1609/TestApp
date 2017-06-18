@@ -11,7 +11,7 @@ import Charts
 
 final class LineChartCell: UIView, ChartCellProtocol {
 
-    @IBOutlet weak var lineChart: LineChartView!
+    @IBOutlet fileprivate weak var lineChart: LineChartView!
 
     var height: CGFloat = 310
 

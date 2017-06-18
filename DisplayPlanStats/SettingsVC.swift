@@ -10,8 +10,8 @@ import UIKit
 
 final class SettingsVC: UIViewController {
 
-    @IBOutlet weak var serverUrlTextField: UITextField!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet fileprivate weak var serverUrlTextField: UITextField!
+    @IBOutlet fileprivate weak var saveButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

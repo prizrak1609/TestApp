@@ -5,22 +5,17 @@ disabled_rules: # rule identifiers to exclude from running
   - function_body_length
   - function_parameter_count
   - line_length
-  - mark
-  - nimble_operator
   - switch_case_on_newline
-  - todo
   - type_body_length
-  - type_name
-  - class_delegate_protocol
   - file_header
-  - large_tuple
-  - prohibited_super_call
   - sorted_imports
-  - vertical_parameter_alignment
-  - overridden_super_call
-  - private_outlet
   - cyclomatic_complexity
 opt_in_rules: # some rules are only opt-in
+  - implicit_return
+  - fatal_error_message
+  - private_outlet
+  - overridden_super_call
+  - prohibited_super_call
   - empty_count
   - attributes
   - closure_end_indentation
@@ -48,6 +43,7 @@ identifier_name:
     - id
     - x
     - y
+    - z
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level

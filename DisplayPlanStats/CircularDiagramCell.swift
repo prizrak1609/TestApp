@@ -11,10 +11,16 @@ import Charts
 
 final class CircularDiagramCell : UIView, ChartCellProtocol {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var pieChartView: PieChartView!
 
     var height: CGFloat = 295
+
+    var title: String = "LIFT N LEARN" {
+        didSet {
+            nameLabel?.text = title
+        }
+    }
 
     var model: PieChartData? {
         didSet {

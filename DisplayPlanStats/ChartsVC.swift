@@ -120,7 +120,7 @@ extension ChartsVC : ChartsVCViewModelProtocol {
             case .liftNLearn: text = "LIFT N LEARN"
             default: text = ""
         }
-        circularDiagram?.nameLabel.text = text
+        circularDiagram?.title = text
     }
 
     func barChartData(_ data: BarChartData?) {

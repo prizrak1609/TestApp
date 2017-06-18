@@ -11,7 +11,7 @@ import Charts
 
 final class BarChartCell : UIView, ChartCellProtocol {
 
-    @IBOutlet weak var barChartView: BarChartView!
+    @IBOutlet fileprivate weak var barChartView: BarChartView!
 
     var height: CGFloat = 295
 

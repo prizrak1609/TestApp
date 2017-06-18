@@ -68,9 +68,7 @@ private extension ChartsVCViewModel {
                 // swiftlint:disable:next force_unwrapping
                 let model = model!
                 // MARK: processing line chart data
-                let lineEntries = model.interactions.enumerated().map { index, entry in
-                    return LineChartDataEntry(x: Double(index), y: Double(entry.count), date: entry.data)
-                }
+                let lineEntries = model.interactions.enumerated().map { index, entry in LineChartDataEntry(x: Double(index), y: Double(entry.count), date: entry.data) }
                 let lineDataSet = LineChartDataSet(values: lineEntries, label: nil)
                 lineDataSet.circleRadius = 3
                 lineDataSet.drawValuesEnabled = false
@@ -79,9 +77,7 @@ private extension ChartsVCViewModel {
                     delegate.lineChartData(lineData)
                 }
                 // MARK: processing pie chart data
-                let pieEntries = model.lifts.map { model in
-                    return PieChartDataEntry(value: model.count, label: model.tag)
-                }
+                let pieEntries = model.lifts.map { PieChartDataEntry(value: $0.count, label: $0.tag) }
                 let pieDataSet = PieChartDataSet(values: pieEntries, label: nil)
                 pieDataSet.colors = Charts.colors
                 pieDataSet.drawIconsEnabled = false
@@ -90,9 +86,7 @@ private extension ChartsVCViewModel {
                     delegate.pieChartData(pieData)
                 }
                 // MARK: processing bar chart data
-                let barEntries = model.lifts.enumerated().map { index, model in
-                    return BarChartEntry(x: Double(index), y: model.count, label: model.tag)
-                }
+                let barEntries = model.lifts.enumerated().map { index, model in BarChartEntry(x: Double(index), y: model.count, label: model.tag) }
                 let barDataSet = BarChartDataSet(values: barEntries, label: nil)
                 barDataSet.colors = Charts.colors
                 let barData = BarChartData(dataSet: barDataSet)

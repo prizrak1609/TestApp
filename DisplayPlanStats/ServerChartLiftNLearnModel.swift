@@ -66,9 +66,7 @@ extension ServerChartLiftNLearnModel {
         let tableDatas: [TableData]
 
         init(json: JSON, maps: [String : String], lifts: [ServerChartLiftNLearnModel.Lift]) {
-            tableDatas = lifts.map { model -> TableData in
-                return TableData(name: model.tag, tag: model.originTag, count: model.count)
-            }
+            tableDatas = lifts.map { TableData(name: $0.tag, tag: $0.originTag, count: $0.count) }
             dwellTime = json["dwell_time"].doubleValue
             devices = json["devices"].arrayValue.map { json -> Device in
                 let count = json["count"].intValue

@@ -16,7 +16,7 @@ protocol ChartCellProtocol {
 
 extension ChartCellProtocol {
 
-    static func loadFromXib(owner: Any?, options: [AnyHashable : Any]?) -> Self? {
+    static func loadFromXib(owner: Any?, options: [AnyHashable : Any]? = nil) -> Self? {
         let xib = Bundle.main.loadNibNamed(String(describing: self), owner: owner, options: options)?.first as? Self
         xib?.initialise()
         return xib

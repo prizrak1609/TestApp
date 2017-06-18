@@ -9,6 +9,10 @@
 import UIKit
 import AlamofireNetworkActivityIndicator
 import IQKeyboardManager
+#if DEBUG
+    import GDPerformanceView_Swift
+    import SwiftyBeaver
+#endif
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +21,13 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // MARK: setup swiftyBeaver
+        #if DEBUG
+            let console = ConsoleDestination()
+            console.asynchronously = false
+            console.format = "$DHH:mm:ss.SSS$d $T $L: $M"
+            SwiftyBeaver.addDestination(console)
+        #endif
         // MARK: set appearance
         UINavigationBar.appearance().tintColor = .black
         UIImageView.appearance().tintColor = .black
@@ -37,6 +48,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = Storyboards.main
 //        }
         window?.makeKeyAndVisible()
+        // MARK: init perfomance view
+        #if DEBUG
+            if window != nil {
+                GDPerformanceMonitor.sharedInstance.appVersionHidden = true
+                GDPerformanceMonitor.sharedInstance.deviceVersionHidden = true
+                GDPerformanceMonitor.sharedInstance.startMonitoring()
+            }
+        #endif
         return true
     }
 

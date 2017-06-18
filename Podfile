@@ -28,15 +28,14 @@ target 'DisplayPlanStats' do
 # https://github.com/hackiftekhar/IQKeyboardManager
   pod 'IQKeyboardManager'
 
-# https://github.com/mxcl/PromiseKit
-#  swift_version = "3.1"
-#  pod "PromiseKit/Alamofire", "~> 4.0"
+# https://github.com/dani-gavrilov/GDPerformanceView-Swift
+  pod 'GDPerformanceView-Swift', '~> 1.2.0'
+
+# https://github.com/SwiftyBeaver/SwiftyBeaver
+  pod 'SwiftyBeaver'
 
   target 'DisplayPlanStatsTests' do
     inherit! :search_paths
-# https://github.com/mxcl/PromiseKit
-#    swift_version = "3.1"
-#    pod "PromiseKit/Alamofire", "~> 4.0"
   end
 
 end

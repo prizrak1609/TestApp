@@ -38,9 +38,7 @@ private extension ChartsVCViewModel {
         server.getStatistic(id: id) { [weak self] (result: ServerResult<ServerChartVideoModel?>) -> Void in
             guard let delegate = self?.delegate else { return }
             if case .result(let model) = result, model != nil {
-                // disable because in if check model != nil
-                // swiftlint:disable:next force_unwrapping
-                print(model!)
+                v(model as Any)
             } else if case .error(let error) = result {
                 delegate.error(error)
             }
@@ -51,9 +49,7 @@ private extension ChartsVCViewModel {
         server.getStatistic(id: id) { [weak self] (result: ServerResult<ServerChartTouchModel?>) -> Void in
             guard let delegate = self?.delegate else { return }
             if case .result(let model) = result, model != nil {
-                // disable because in if check model != nil
-                // swiftlint:disable:next force_unwrapping
-                print(model!)
+                v(model as Any)
             } else if case .error(let error) = result {
                 delegate.error(error)
             }

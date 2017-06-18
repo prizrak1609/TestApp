@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "783C4BDF1ED46F0A0078F546"
+               BlueprintIdentifier = "788313D81EEEA41F002C5E13"
                BuildableName = "DisplayPlanStatsTests.xctest"
                BlueprintName = "DisplayPlanStatsTests"
                ReferencedContainer = "container:DisplayPlanStats.xcodeproj">
@@ -80,6 +80,11 @@
          </EnvironmentVariable>
       </EnvironmentVariables>
       <AdditionalOptions>
+         <AdditionalOption
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction

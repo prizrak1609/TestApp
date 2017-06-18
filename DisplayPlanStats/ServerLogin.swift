@@ -21,7 +21,7 @@ final class ServerLogin : ServerBaseClass {
                       "password" : password]
         let request = Alamofire.request(url, method: .post, parameters: params)
         request
-            .responseString { print($0.result.value ?? "") }
+            .responseString { d($0.result.value as Any) }
             .responseJSON(queue: .global(qos: .userInitiated)) { [weak self] response in
                 guard let welf = self else { return }
                 let result = welf.preParse(json: response)

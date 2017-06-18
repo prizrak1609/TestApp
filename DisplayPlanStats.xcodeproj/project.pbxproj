@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00B4F968E3B4EE1A90B0697C /* Pods_DisplayPlanStatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF67CED874933C685BD33701 /* Pods_DisplayPlanStatsTests.framework */; };
 		45763B15D57301036CB2EE73 /* Pods_DisplayPlanStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3211AC474DBAC0AC013BF /* Pods_DisplayPlanStats.framework */; };
+		780C4DE61EF7262D007CE355 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C4DE51EF7262D007CE355 /* Functions.swift */; };
 		781F204A1EE9637600848AE0 /* ServerChartTouchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F20491EE9637600848AE0 /* ServerChartTouchModel.swift */; };
 		781F204C1EE9688900848AE0 /* ServerChartVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F204B1EE9688900848AE0 /* ServerChartVideoModel.swift */; };
 		78212F041EDD7D7E009F423C /* BarChartXValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78212F031EDD7D7E009F423C /* BarChartXValueFormatter.swift */; };
@@ -90,6 +91,7 @@
 		37A3211AC474DBAC0AC013BF /* Pods_DisplayPlanStats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DisplayPlanStats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54669AFC0ED21EE2D6DD8D98 /* Pods-DisplayPlanStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisplayPlanStatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DisplayPlanStatsTests/Pods-DisplayPlanStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		580FCD52FB2C8CDAE1938233 /* Pods-DisplayPlanStatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisplayPlanStatsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DisplayPlanStatsUITests/Pods-DisplayPlanStatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		780C4DE51EF7262D007CE355 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		781F20491EE9637600848AE0 /* ServerChartTouchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerChartTouchModel.swift; sourceTree = "<group>"; };
 		781F204B1EE9688900848AE0 /* ServerChartVideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerChartVideoModel.swift; sourceTree = "<group>"; };
 		78212F031EDD7D7E009F423C /* BarChartXValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartXValueFormatter.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				7827CB7C1ED478AA007755F1 /* UIC.swift */,
 				78EB3AB21ED59BCA00B83C8E /* Storyboards.swift */,
 				784881B51ED6EAA30059F855 /* Variables.swift */,
+				780C4DE51EF7262D007CE355 /* Functions.swift */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				784881A51ED6C5BA0059F855 /* BarChartCell.swift in Sources */,
 				783C4BD01ED46F0A0078F546 /* AppDelegate.swift in Sources */,
 				78EB3ABD1ED5A65400B83C8E /* MainVCCell.swift in Sources */,
+				780C4DE61EF7262D007CE355 /* Functions.swift in Sources */,
 				78EB3AB31ED59BCA00B83C8E /* Storyboards.swift in Sources */,
 				78212F121EDD9285009F423C /* TableInsightsCellCell.swift in Sources */,
 				784E6FD51ED80AA000D6C3AB /* ChartsVCViewModel.swift in Sources */,
